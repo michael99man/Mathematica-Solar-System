@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1336,         51]
-NotebookOptionsPosition[      1019,         34]
-NotebookOutlinePosition[      1373,         50]
-CellTagsIndexPosition[      1330,         47]
+NotebookDataLength[      1422,         52]
+NotebookOptionsPosition[      1104,         35]
+NotebookOutlinePosition[      1458,         51]
+CellTagsIndexPosition[      1415,         48]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,10 +26,11 @@ Cell[BoxData[
   "\[IndentingNewLine]"}]], "Input",
  CellChangeTimes->{{3.6557381482207193`*^9, 3.655738175756521*^9}, {
   3.655738216563117*^9, 3.655738241512178*^9}, {3.655738274744391*^9, 
-  3.655738290629677*^9}, {3.655738658591837*^9, 3.655738666468171*^9}}],
+  3.655738290629677*^9}, {3.655738658591837*^9, 3.655738666468171*^9}, {
+  3.655738864947633*^9, 3.6557388666650763`*^9}}],
 
-Cell[BoxData["\<\"Branman is Bad\"\>"], "Print",
- CellChangeTimes->{3.655738666828786*^9}]
+Cell[BoxData["\<\"Branman is the best\"\>"], "Print",
+ CellChangeTimes->{3.655738666828786*^9, 3.6557388671672173`*^9}]
 }, Open  ]]
 },
 WindowSize->{808, 678},
@@ -50,8 +51,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 330, 6, 46, "Input"],
-Cell[913, 30, 90, 1, 21, "Print"]
+Cell[580, 22, 386, 7, 46, "Input"],
+Cell[969, 31, 119, 1, 21, "Print"]
 }, Open  ]]
 }
 ]
