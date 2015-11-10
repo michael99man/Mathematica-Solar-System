@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7768,        221]
-NotebookOptionsPosition[      7440,        204]
-NotebookOutlinePosition[      7794,        220]
-CellTagsIndexPosition[      7751,        217]
+NotebookDataLength[     14656,        394]
+NotebookOptionsPosition[     14327,        377]
+NotebookOutlinePosition[     14680,        393]
+CellTagsIndexPosition[     14637,        390]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -37,173 +37,346 @@ Cell[BoxData[{
      RowBox[{"Pluto", "\[Rule]", "0.1"}]}], "|>"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{"distance", " ", "=", " ", 
-    RowBox[{"<|", 
-     RowBox[{
-      RowBox[{"Sun", "\[Rule]", "0"}], ",", 
-      RowBox[{"Mercury", "\[Rule]", "4.76"}], ",", 
-      RowBox[{"Venus", "\[Rule]", "9.45"}], ",", 
-      RowBox[{"Earth", "\[Rule]", "14.07"}], ",", 
-      RowBox[{"Mars", "\[Rule]", "18.97"}], ",", 
-      RowBox[{"Jupiter", "\[Rule]", "24.71"}], ",", 
-      RowBox[{"Saturn", "\[Rule]", "30.52"}], ",", 
-      RowBox[{"Uranus", "\[Rule]", "36.68"}], ",", 
-      RowBox[{"Neptune", "\[Rule]", "42.89"}], ",", 
-      RowBox[{"Pluto", "\[Rule]", "49.55"}]}], "|>"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"sun", " ", "=", " ", 
-    RowBox[{"{", 
-     RowBox[{"Orange", ",", 
-      RowBox[{"Specularity", "[", 
-       RowBox[{"White", ",", "7"}], "]"}], ",", 
-      RowBox[{"Sphere", "[", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
-        RowBox[{"radii", "[", "Sun", "]"}]}], "]"}]}], "}"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"mercury", " ", "=", " ", 
-   RowBox[{"Sphere", "[", 
+  RowBox[{"distance", " ", "=", " ", 
+   RowBox[{"<|", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"distance", "[", "Mercury", "]"}], ",", "0", ",", "0"}], "}"}],
-      ",", 
-     RowBox[{"radii", "[", "Mercury", "]"}]}], "]"}]}], 
+     RowBox[{"Sun", "\[Rule]", "0"}], ",", 
+     RowBox[{"Mercury", "\[Rule]", "4.76"}], ",", 
+     RowBox[{"Venus", "\[Rule]", "9.45"}], ",", 
+     RowBox[{"Earth", "\[Rule]", "14.07"}], ",", 
+     RowBox[{"Mars", "\[Rule]", "18.97"}], ",", 
+     RowBox[{"Jupiter", "\[Rule]", "24.71"}], ",", 
+     RowBox[{"Saturn", "\[Rule]", "30.52"}], ",", 
+     RowBox[{"Uranus", "\[Rule]", "36.68"}], ",", 
+     RowBox[{"Neptune", "\[Rule]", "42.89"}], ",", 
+     RowBox[{"Pluto", "\[Rule]", "49.55"}]}], "|>"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"venus", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"orbitLength", " ", "=", " ", 
+    RowBox[{"<|", 
+     RowBox[{
+      RowBox[{"Mercury", "\[Rule]", 
+       RowBox[{"1", "/", "4"}]}], ",", 
+      RowBox[{"Venus", "\[Rule]", 
+       RowBox[{"7", "/", "12"}]}], ",", 
+      RowBox[{"Earth", "\[Rule]", "1"}], ",", 
+      RowBox[{"Mars", "\[Rule]", 
+       RowBox[{"23", "/", "12"}]}], ",", 
+      RowBox[{"Jupiter", "\[Rule]", 
+       RowBox[{"142", "/", "12"}]}], ",", 
+      RowBox[{"Saturn", "\[Rule]", 
+       RowBox[{"354", "/", "12"}]}], ",", 
+      RowBox[{"Uranus", "\[Rule]", 
+       RowBox[{"1009", "/", "12"}]}], ",", 
+      RowBox[{"Neptune", "\[Rule]", 
+       RowBox[{"1979", "/", "12"}]}], ",", 
+      RowBox[{"Pluto", "\[Rule]", 
+       RowBox[{"2977", "/", "12"}]}]}], "|>"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sun", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"Orange", ",", 
+     RowBox[{"Specularity", "[", 
+      RowBox[{"White", ",", "7"}], "]"}], ",", 
+     RowBox[{"Sphere", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"radii", "[", "Sun", "]"}]}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mercury", "[", "t_", "]"}], " ", ":=", " ", 
+   RowBox[{"{", 
+    RowBox[{"Red", ",", " ", 
+     RowBox[{"Sphere", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Cos", "[", 
+           RowBox[{"2", "Pi", "*", 
+            RowBox[{"t", "/", 
+             RowBox[{"orbitLength", "[", "Mercury", "]"}]}]}], "]"}], "*", 
+          RowBox[{"distance", "[", "Mercury", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"Sin", "[", 
+           RowBox[{"2", "Pi", "*", 
+            RowBox[{"t", "/", 
+             RowBox[{"orbitLength", "[", "Mercury", "]"}]}]}], "]"}], "*", 
+          RowBox[{"distance", "[", "Mercury", "]"}]}], ",", "0"}], "}"}], ",", 
+       RowBox[{"radii", "[", "Mercury", "]"}]}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"venus", "[", "t_", "]"}], " ", ":=", " ", 
    RowBox[{"Sphere", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"distance", "[", "Venus", "]"}], ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Venus", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Venus", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Venus", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Venus", "]"}]}], ",", "0"}], "}"}], ",", 
      RowBox[{"radii", "[", "Venus", "]"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"earth", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"earth", "[", "t_", "]"}], " ", ":=", " ", 
    RowBox[{"Sphere", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"distance", "[", "Earth", "]"}], ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "Pi", "*", "t"}], "]"}], "*", 
+        RowBox[{"distance", "[", "Earth", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "Pi", "*", "t"}], "]"}], "*", 
+        RowBox[{"distance", "[", "Earth", "]"}]}], ",", "0"}], "}"}], ",", 
      RowBox[{"radii", "[", "Earth", "]"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"mars", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"mars", "[", "t_", "]"}], " ", ":=", " ", 
    RowBox[{"Sphere", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"distance", "[", "Mars", "]"}], ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Mars", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Mars", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Mars", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Mars", "]"}]}], ",", "0"}], "}"}], ",", 
      RowBox[{"radii", "[", "Mars", "]"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"jupiter", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"jupiter", "[", "t_", "]"}], " ", ":=", " ", 
    RowBox[{"Sphere", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"distance", "[", "Jupiter", "]"}], ",", "0", ",", "0"}], "}"}],
-      ",", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Jupiter", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Jupiter", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Jupiter", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Jupiter", "]"}]}], ",", "0"}], "}"}], ",", 
      RowBox[{"radii", "[", "Jupiter", "]"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"saturn", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"saturn", " ", "[", "t_", "]"}], " ", ":=", " ", 
    RowBox[{"Sphere", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"distance", "[", "Saturn", "]"}], ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Saturn", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Saturn", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Saturn", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Saturn", "]"}]}], ",", "0"}], "}"}], ",", 
      RowBox[{"radii", "[", "Saturn", "]"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"uranus", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"uranus", " ", "[", "t_", "]"}], " ", ":=", " ", 
    RowBox[{"Sphere", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"distance", "[", "Uranus", "]"}], ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Uranus", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Uranus", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Uranus", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Uranus", "]"}]}], ",", "0"}], "}"}], ",", 
      RowBox[{"radii", "[", "Uranus", "]"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"neptune", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"neptune", " ", "[", "t_", "]"}], " ", ":=", " ", 
    RowBox[{"Sphere", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"distance", "[", "Neptune", "]"}], ",", "0", ",", "0"}], "}"}],
-      ",", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Neptune", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Neptune", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "Pi", "*", 
+          RowBox[{"t", "/", 
+           RowBox[{"orbitLength", "[", "Neptune", "]"}]}]}], "]"}], "*", 
+        RowBox[{"distance", "[", "Neptune", "]"}]}], ",", "0"}], "}"}], ",", 
      RowBox[{"radii", "[", "Neptune", "]"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"pluto", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"pluto", " ", "[", "t_", "]"}], " ", ":=", " ", 
     RowBox[{"Sphere", "[", 
      RowBox[{
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"distance", "[", "Pluto", "]"}], ",", "0", ",", "0"}], "}"}], 
-      ",", 
-      RowBox[{"radii", "[", "Pluto", "]"}]}], "]"}]}], ";"}], "\n", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", "Pi", "*", 
+           RowBox[{"t", "/", 
+            RowBox[{"orbitLength", "[", "Pluto", "]"}]}]}], "]"}], "*", 
+         RowBox[{"distance", "[", "Pluto", "]"}]}], ",", 
+        RowBox[{
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", "Pi", "*", 
+           RowBox[{"t", "/", 
+            RowBox[{"orbitLength", "[", "Pluto", "]"}]}]}], "]"}], "*", 
+         RowBox[{"distance", "[", "Pluto", "]"}]}], ",", "0"}], "}"}], ",", 
+      RowBox[{"radii", "[", "Pluto", "]"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\n", "\[IndentingNewLine]", 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"Graphics3D", "[", 
-  RowBox[{"{", 
-   RowBox[{
-   "sun", ",", "mercury", ",", "venus", ",", "earth", ",", "mars", ",", 
-    "jupiter", ",", "saturn", ",", "uranus", ",", "neptune", ",", "pluto"}], 
-   "}"}], "]"}], "\[IndentingNewLine]"}], "Input",
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"sun", ",", 
+       RowBox[{"mercury", "[", "t", "]"}], ",", 
+       RowBox[{"venus", "[", "t", "]"}], ",", 
+       RowBox[{"earth", "[", "t", "]"}], ",", 
+       RowBox[{"mars", "[", "t", "]"}], ",", 
+       RowBox[{"jupiter", "[", "t", "]"}], ",", 
+       RowBox[{"saturn", "[", "t", "]"}], ",", 
+       RowBox[{"uranus", "[", "t", "]"}], ",", 
+       RowBox[{"neptune", "[", "t", "]"}], ",", 
+       RowBox[{"pluto", "[", "t", "]"}]}], "}"}], ",", 
+     RowBox[{"Background", "\[Rule]", "Black"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "50"}], ",", "50"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "50"}], ",", "50"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "50", ",", 
+     RowBox[{"ControlType", "\[Rule]", "Animator"}], ",", 
+     RowBox[{"AnimationRate", "\[Rule]", ".3"}], ",", 
+     RowBox[{"RefreshRate", "\[Rule]", "1000"}]}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->CompressedData["
-1:eJxTTMoPSmViYGAQB2IQrSTQnnLE5rVjjumPdBDNxyqUC6IPJxsUgGjeS+El
-IDpALaQMRId8CFoCop1++y0F0UzBcvtAtJ9HKJj+ptyxmt8WqE6Pfz2IVpNg
-2wqi91R37APRs76uOgSi57jOPwuiTwhHXQbRAoee3wLRWa9OPAHR5euvgekD
-9v6vQXTxyX//QfSfuBusAkDasW+9CIjOLHgpAaKPKf0F06fei8qC6GYxWTB9
-k+O4P4ied5Y7DkQ7/NFIAdHbUp7VgOgbKx41geh3zN1tILpoo1g3iD7DydoH
-opMYph0F0UcCfx8D0SduZ50F0QGftr0B0da8yV9ANNu2lp8gOqYsmEcQSNuI
-6POB6CILzXIQXb2hsxJEAwDWoqYw
+1:eJwdz11IUwEAxfG1mBjlNs3GIjXUmNpDRSqVGupCkGhzOTMLNXAL3dASLSWs
+l1q1NbgplEWIQR8UFi6hRkGNXMuWtB4yxL4gRBa1KJMWlVt2//fh8Hs45+Vk
+Nh2s3i+XyWR5YjBLfdoaKImUtxb+bkalIqUNn1g2tGPSq92H0KSr6cKa2epr
+qJ83Xke5OcOHxspdkr+ynbdUW8XdOpUHddqEe/iwx+nDS9EhPw5UXA5hcPne
+CVT7P71F+5fgDHZ7JiUfl1ZFsPP5vwWMNU4p1KLlgicVbe2ftTiWFZcc/74i
+HU9o0iXfJD6rwsHQ0kYsi+Va0WsNH8Wpm9PH8dti9ynsGNG48cUShYBNsv6n
+GNg5P4bBd/YQmua8X7E4yfITE7yOP1jfZV6WLFqSul6JHZvzurHnjusItl7Y
+lG/hV5lesq74fAsahvNtGEtL2yeIzu453Iz9j/xteHdVUNL4UevAWseEC30x
+Zy8eOBYdxI3Cjqsot7mHUHnSMow3rtgl3yfH72O4d/sDrDNXjuLFvpnXWL+l
+IYwDHww/cE18PIq3c+f+YiyncwEnF51beVa0YbQoA19OZ65GVUCXjX69WSf1
+moICqVeeKcS1rr4iTBxxl6JgatmGkVpDBf4HmOsyIQ==
   "]],
 
 Cell[BoxData[
- Graphics3DBox[{
-   {RGBColor[1, 0.5, 0], Specularity[
-     GrayLevel[1], 7], SphereBox[{0, 0, 0}, 2.84]}, 
-   SphereBox[{4.76, 0, 0}, 0.38], SphereBox[{0, 9.45, 0}, 0.78], 
-   SphereBox[{14.07, 0, 0}, 0.81], SphereBox[{18.97, 0, 0}, 0.53], 
-   SphereBox[{24.71, 0, 0}, 1.7], SphereBox[{30.52, 0, 0}, 1.4], 
-   SphereBox[{36.68, 0, 0}, 1.1], SphereBox[{42.89, 0, 0}, 1.1], 
-   SphereBox[{49.55, 0, 0}, 0.1]},
-  ImageSize->{866.5, 907.},
-  ViewAngle->0.46365422338745127`,
-  ViewPoint->{0.07118184680881812, -2.09820914596707, -2.653760578237852},
-  ViewVertical->{0.1659956695399344, -3.8232315176005014`, 
-   2.377199044703755}]], "Output",
- CellChangeTimes->{{3.655892332458795*^9, 3.655892344817697*^9}, {
-   3.6558923926853113`*^9, 3.6558924189401693`*^9}, {3.655892462795652*^9, 
-   3.655892468531886*^9}, {3.655892528601386*^9, 3.655892564319116*^9}, 
-   3.655892639467042*^9, {3.655892681978497*^9, 3.6558926957796097`*^9}, 
-   3.655892775268565*^9, {3.655892827281066*^9, 3.6558928318120823`*^9}, {
-   3.655892944702649*^9, 3.6558929527098227`*^9}, 3.6558929833036203`*^9, 
-   3.655893042926515*^9, {3.6558930747460623`*^9, 3.6558931094084663`*^9}, 
-   3.6558931577913103`*^9, 3.655893192326325*^9, 3.6558932254234867`*^9, {
-   3.655893678981572*^9, 3.655893689350975*^9}, {3.655893805866691*^9, 
-   3.655893819509601*^9}, {3.6558939173836393`*^9, 3.655893927539543*^9}, {
-   3.655894051732134*^9, 3.655894056643134*^9}, {3.655894674821965*^9, 
-   3.6558946885870123`*^9}, 3.655894732575036*^9, 3.655894889271696*^9, {
-   3.655894974683837*^9, 3.6558949946266527`*^9}, {3.6558951456347933`*^9, 
-   3.6558951564096603`*^9}, 3.655895973754601*^9, 3.655896004973617*^9}]
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 20.84846177101135, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 50}}, Typeset`size$$ = {704., {228., 233.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$1954$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$1954$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{$CellContext`sun, 
+         $CellContext`mercury[$CellContext`t$$], 
+         $CellContext`venus[$CellContext`t$$], 
+         $CellContext`earth[$CellContext`t$$], 
+         $CellContext`mars[$CellContext`t$$], 
+         $CellContext`jupiter[$CellContext`t$$], 
+         $CellContext`saturn[$CellContext`t$$], 
+         $CellContext`uranus[$CellContext`t$$], 
+         $CellContext`neptune[$CellContext`t$$], 
+         $CellContext`pluto[$CellContext`t$$]}, Background -> Black, 
+        PlotRange -> {{-50, 50}, {-50, 50}, {-5, 5}}], 
+      "Specifications" :> {{$CellContext`t$$, 0, 50, ControlType -> Animator, 
+         AnimationRate -> 0.3, RefreshRate -> 1000}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{749., {273., 278.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.6561522687967587`*^9, 3.6561523119997*^9}, {
+   3.656152381620123*^9, 3.656152405001959*^9}, 3.656152437257156*^9, 
+   3.656152744525145*^9, 3.65615297269066*^9, 3.656153049676409*^9, {
+   3.656153097969244*^9, 3.656153109883049*^9}, 3.6561533389254627`*^9, 
+   3.6561533735354233`*^9, {3.6561535078903217`*^9, 3.6561535168692923`*^9}, {
+   3.656153566444865*^9, 3.656153596831452*^9}, {3.656153631807169*^9, 
+   3.656153643173369*^9}}]
 }, Open  ]]
 },
 WindowSize->{1389, 618},
-WindowMargins->{{1, Automatic}, {42, Automatic}},
+WindowMargins->{{5, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
 2015)",
 StyleDefinitions->"Default.nb"
@@ -220,8 +393,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 5152, 150, 318, "Input"],
-Cell[5735, 174, 1689, 27, 922, "Output"]
+Cell[580, 22, 11145, 301, 386, "Input"],
+Cell[11728, 325, 2583, 49, 568, "Output"]
 }, Open  ]]
 }
 ]
