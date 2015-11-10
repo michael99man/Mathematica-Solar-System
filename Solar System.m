@@ -20,5 +20,9 @@
 (**)
 (**)
 (**)
-(*Manipulate[Graphics3D[{sun,mercury[t],venus[t],earth[t],mars[t],jupiter[t],saturn[t],uranus[t],neptune[t],pluto[t]},Background->Black,PlotRange->{{-50,50},{-50,50},{-5,5}}],{t,0,50,ControlType->Animator,AnimationRate->.3,RefreshRate->1000}]*)
+(*Manipulate[Graphics3D[{sun,mercury[t],venus[t],earth[t],mars[t],jupiter[t],saturn[t],uranus[t],neptune[t],pluto[t]},Background->Black,Boxed->False,ImageSize->Full,PlotRange->{{-50,50},{-50,50},{-5,5}}],{{t,2015,"Earth Years"},2015,2069,ControlType->Animator,AnimationRate->.3,RefreshRate->60,Appearance->"Labeled"}]*)
+(**)
+
+
+(* ::Input:: *)
 (**)
